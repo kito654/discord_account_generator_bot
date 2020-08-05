@@ -57,7 +57,7 @@ class accountgen(commands.Bot):
         self.on_ready()
         self.nordvpn1()
 
-a = accountgen(command_prefix="!")
+a = accountgen(command_prefix="$")
 a.run()
 client.run(token)
 
