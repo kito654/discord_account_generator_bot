@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands, tasks
 from settings import token
+import time
 
 client = commands.Bot(command_prefix="$")
 
@@ -48,6 +49,14 @@ class accountgen(commands.Bot):
                 except AttributeError:
                     pass
 
+                await client.process_commands(message)
+
+    def checkstock(self):
+        @client.command()
+        async def stock(ctx):
+            time.sleep(0.5)
+            await ctx.send('NordVPN: ' + str(len(open('nordvpn.txt', 'r').readlines())) + "\nNetflix: " + str(len(open('netflix.txt', 'r').readlines())) + "\nDisney: " + str(len(open('disney.txt', "r").readlines())) + "\nHulu: " + str(len(open('hulu.txt', "r").readlines())))
+
                 #Problem with reading
 
     def on_ready(self):
@@ -56,8 +65,8 @@ class accountgen(commands.Bot):
     def run(self):
         self.on_ready()
         self.nordvpn1()
+        self.checkstock()
 
-a = accountgen(command_prefix="$")
+a = accountgen(command_prefix="!")
 a.run()
 client.run(token)
-
