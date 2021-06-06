@@ -14,4 +14,4 @@ bump the v3rmillion thread!
 Made by:
 Idk ee#0480
 
-#WARNING: As of 2021, this code is beginner code. Please do not use this project for serious intentions.
+# WARNING: As of 2021, this code is beginner code. Please do not use this project for serious intentions.
